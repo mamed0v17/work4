@@ -24,12 +24,9 @@ class ResultFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         model.text.observe(requireActivity()) {
-            it.forEach { value->
+            it.forEach { value ->
                 binding.tvResult.append(value)
             }
-          //  binding.apply {
-            //    tvResult.text = it.toString()
-            }
         }
-
     }
+}

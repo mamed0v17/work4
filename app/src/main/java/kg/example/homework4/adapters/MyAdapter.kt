@@ -7,20 +7,21 @@ import kg.example.homework4.ui.AdditionFragment
 import kg.example.homework4.ui.OperationFragment
 import kg.example.homework4.ui.ResultFragment
 
-class MyAdapter(fragment:FragmentActivity):FragmentStateAdapter(fragment) {
+class MyAdapter(fragment: FragmentActivity) : FragmentStateAdapter(fragment) {
     override fun getItemCount() = 3
 
     override fun createFragment(position: Int): Fragment {
-        return when(position){
-            0 ->{
+        return when (position) {
+            0 -> {
                 OperationFragment()
             }
-            1 ->{
+            1 -> {
                 AdditionFragment()
             }
-            2 ->{
+            2 -> {
                 ResultFragment()
-            }else->{
+            }
+            else -> {
                 OperationFragment()
             }
         }

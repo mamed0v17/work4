@@ -14,7 +14,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         initView()
     }
-    private fun initView(){
+
+    private fun initView() {
         adapter = MyAdapter(this)
         binding.apply {
             viewPager.adapter = adapter

@@ -8,6 +8,7 @@ class SharedViewModel : ViewModel() {
     val counter = MutableLiveData<Int>()
     val text = MutableLiveData<ArrayList<String>>()
     val list = arrayListOf<String>()
+
     fun addition() {
         mCounter++
         counter.value = mCounter
@@ -16,7 +17,8 @@ class SharedViewModel : ViewModel() {
     }
 
     fun subtraction() {
-        counter.value = ++mCounter
+        mCounter++
+        counter.value = mCounter
         list.add("- \n")
         text.value = list
     }

@@ -10,11 +10,12 @@ import kg.example.homework4.viewmodel.SharedViewModel
 import kg.example.homework4.databinding.FragmentAdditionBinding
 
 class AdditionFragment : Fragment() {
- private lateinit var binding: FragmentAdditionBinding
- private lateinit var model: SharedViewModel
+    private lateinit var binding: FragmentAdditionBinding
+    private lateinit var model: SharedViewModel
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View {
         binding = FragmentAdditionBinding.inflate(layoutInflater)
         model = ViewModelProvider(requireActivity())[SharedViewModel::class.java]
         return binding.root
@@ -23,7 +24,7 @@ class AdditionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        model.counter.observe(requireActivity()){
+        model.counter.observe(requireActivity()) {
             binding.apply {
                 tvAddition.text = it.toString()
             }
